@@ -1,36 +1,45 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Casthel Confectionery
 
-## Getting Started
+A Next.js App Router storefront for browsing chocolates, cakes, and gifts. The current app includes a static product catalog, category/search filters, a cart persisted in browser local storage, and a demo checkout form.
 
-First, run the development server:
+> Checkout is not connected to an order service or payment provider. Submitting the form does not place an order or take payment.
 
-```bash
+## Getting started
+
+Install dependencies and start the development server:
+
+```powershell
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Available scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Command | Purpose |
+| --- | --- |
+| `npm run dev` | Start the local development server. |
+| `npm run lint` | Run ESLint. |
+| `npm run build` | Create a production build. |
+| `npm run start` | Serve the production build. |
 
-## Learn More
+There is currently no automated unit- or browser-test runner configured. See the [testing strategy](./docs/TESTING.md) for priorities and a manual smoke test.
 
-To learn more about Next.js, take a look at the following resources:
+## Documentation
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- [Testing strategy](./docs/TESTING.md) — unit/integration guidance, what to test, and manual smoke checks.
+- [Debugging methodology](./docs/DEBUGGING.md) — a repeatable troubleshooting and verification workflow.
+- [Code review checklist](./docs/CODE_REVIEW.md) — correctness, accessibility, resilience, and verification checks.
+- [Storefront design](./docs/DESIGN.md) — routes, state, shopping flow, and system boundaries.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Source layout
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```text
+src/
+  app/                 App Router pages and global styles
+  component/           Shared UI and cart context
+  lib/                 Product catalog and shared helpers
+public/                Static images and video
+docs/                  Project testing, debugging, review, and design guides
+```
