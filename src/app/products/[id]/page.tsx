@@ -7,6 +7,7 @@ import { useParams, useRouter } from "next/navigation";
 import { Suspense, useState } from "react";
 import { ArrowLeft, Minus, Plus, ShoppingBag } from "lucide-react";
 import StoreHeader from "@/component/store-header";
+import StoreLoader from "@/component/store-loader";
 import { useCart } from "@/component/cart-provider";
 import { products, formatPrice } from "@/lib/products";
 import ProductCard from "@/component/product-card";
@@ -17,7 +18,7 @@ export default function ProductDetailsPage() {
       fallback={
         <main className="min-h-screen bg-[#fffaf7]">
           <StoreHeader />
-          <p className="p-12 text-center">Loading product...</p>
+          <StoreLoader message="Loading product..." />
         </main>
       }
     >

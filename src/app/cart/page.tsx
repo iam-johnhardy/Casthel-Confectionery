@@ -4,6 +4,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import StoreHeader from "@/component/store-header";
+import StoreLoader from "@/component/store-loader";
 import { useCart } from "@/component/cart-provider";
 import { products, formatPrice } from "@/lib/products";
 import { ArrowRight, Minus, Plus, Trash2 } from "lucide-react";
@@ -25,7 +26,7 @@ export default function CartPage() {
     return (
       <main className="min-h-screen bg-[#fffaf7]">
         <StoreHeader />
-        <p className="p-12 text-center">Loading your cart...</p>
+        <StoreLoader message="Loading your cart..." />
       </main>
     );
   }
@@ -145,7 +146,7 @@ export default function CartPage() {
               </div>
 
               <div className="mt-5 flex justify-between gap-4">
-                <span className="font-semibold">Subtotal</span>
+                <span className="font-semibold">Total before delivery</span>
                 <span className="text-lg font-bold text-[#d9527a]">
                   {formatPrice(subtotal)}
                 </span>

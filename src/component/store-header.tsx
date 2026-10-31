@@ -12,8 +12,8 @@ export default function StoreHeader() {
   return (
     <header className="sticky top-0 z-40 border-b border-[#f3e5df] bg-[#fffaf7]/95 backdrop-blur">
       <nav className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-6 py-3">
-        <Link href="/" className="monsieur-la-doulaise-regular text-2xl font-bold text-[#e96d91]">
-          Casthel Confectionery<span className="text-[#ccc422]">.</span>
+        <Link href="/#home" className="monsieur-la-doulaise-regular text-lg xl:text-4xl font-bold text-[#e96d91]">
+          Casthel Confectionery.
         </Link>
 
         <div className="flex items-center gap-4 text-sm sm:gap-6">

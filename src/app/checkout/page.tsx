@@ -6,6 +6,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import StoreHeader from "@/component/store-header";
+import StoreLoader from "@/component/store-loader";
 import { useCart } from "@/component/cart-provider";
 import { products, formatPrice } from "@/lib/products";
 
@@ -37,7 +38,7 @@ export default function CheckoutPage() {
     return (
       <main className="min-h-screen bg-[#fffaf7]">
         <StoreHeader />
-        <p className="p-12 text-center">Loading checkout...</p>
+        <StoreLoader message="Loading checkout..." />
       </main>
     );
   }

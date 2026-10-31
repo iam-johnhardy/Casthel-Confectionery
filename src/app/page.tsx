@@ -278,7 +278,14 @@ export default async function Home() {
             <div className="mt-4 space-y-3 text-sm text-white/70">
               <p>Delivery information</p>
               <p>Frequently asked questions</p>
-              <p>Contact us</p>
+              <p>
+                <a href="mailto:chiomaethel002@gm.com">
+                  ✉️ chiomaethel002@gm.com
+                </a>
+              </p>
+              <p>
+                <a href="tel:07069458045">📞 +2347069458045</a>
+              </p>
             </div>
           </div>
           <div>
