@@ -23,6 +23,9 @@ export default function StoreHeader() {
           <Link href="/about" className="hidden hover:text-[#e96d91] sm:block">
             Our Story
           </Link>
+          <Link href="/login" className="hidden hover:text-[#e96d91] sm:block">
+            Sign in
+          </Link>
           <Link
             href="/cart"
             className="flex items-center gap-2 rounded-full bg-[#e96d91] px-4 py-2 text-white hover:bg-[#d9527a]"

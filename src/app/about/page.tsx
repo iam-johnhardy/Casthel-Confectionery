@@ -55,13 +55,13 @@ export default async function AboutPage() {
             who matter.
           </p>
         </div>
-        <div className="absolute -left-10 top-10 h-36 w-36 rounded-full bg-[#f9dce5]" />
-        <div className="absolute -right-8 bottom-0 h-40 w-40 rounded-full bg-[#f4e5cc]" />
+        <div className="absolute -left-10 top-10 h-36 w-36 rounded-full bg-[#f9dce5] animate-bounce" />
+        <div className="absolute -right-8 bottom-0 h-80 w-80 rounded-full bg-[#f4e5cc] animate-pulse" />
       </section>
 
       <section className="mx-auto grid max-w-7xl items-center gap-10 px-5 py-16 md:grid-cols-2 lg:px-8 lg:py-24">
         <Image
-          src="https://images.pexels.com/photos/291528/pexels-photo-291528.jpeg?auto=compress&cs=tinysrgb&w=1100"
+          src='/about-us.jpeg'
           alt="Preparing baked goods with care"
           width={1100}
           height={880}
@@ -77,7 +77,7 @@ export default async function AboutPage() {
           </h2>
           <div className="mt-5 space-y-4 leading-7 text-[#806a62]">
             <p>
-              E Bakes is built around a simple idea: the things we share
+              Casthel Confectionery is built around a simple idea: the things we share
               can make ordinary days feel extraordinary.
             </p>
             <p>
@@ -169,8 +169,8 @@ export default async function AboutPage() {
       </section>
 
       <footer className="bg-[#3b211f] px-5 py-10 text-center text-white">
-        <Link href="/" className="font-serif text-2xl">
-          E Bakes.
+        <Link href="/" className="monsieur-la-doulaise-regular font-serif text-2xl">
+          Casthel Confectionery.
         </Link>
         <p className="mt-3 text-sm text-white/70">
           Thoughtfully made treats for life&apos;s sweetest moments.
@@ -180,8 +180,8 @@ export default async function AboutPage() {
           <Link href="/cart">Cart</Link>
           <Link href="/about">Our story</Link>
         </div>
-        <p className="mt-8 text-xs text-white/50">
-          © {currentYear} E Bakes.
+        <p className=" mt-8 text-xs text-white/50">
+          © {currentYear} Casthel Confectionery. All rights reserved.
         </p>
       </footer>
     </main>
