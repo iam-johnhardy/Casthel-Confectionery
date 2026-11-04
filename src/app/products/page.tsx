@@ -10,10 +10,7 @@ export default function ProductsPage() {
   const [category, setCategory] = useState("All");
   const [search, setSearch] = useState("");
 
-//   const categories = [
-//     "All",
-//     ...Array.from(new Set(products.map((product) => product.category)),
-//   ];
+
 const categories = [
   "All",
   ...Array.from(new Set(products.map((product) => product.category))),

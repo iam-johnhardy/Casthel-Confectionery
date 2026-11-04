@@ -4,7 +4,6 @@
 import Link from "next/link";
 import Image from "next/image";
 import StoreHeader from "@/component/store-header";
-import StoreLoader from "@/component/store-loader";
 import { useCart } from "@/component/cart-provider";
 import { products, formatPrice } from "@/lib/products";
 import { ArrowRight, Minus, Plus, Trash2 } from "lucide-react";
@@ -22,15 +21,6 @@ export default function CartPage() {
     0
   );
 
-  if (!ready) {
-    return (
-      <main className="min-h-screen bg-[#fffaf7]">
-        <StoreHeader />
-        <StoreLoader message="Loading your cart..." />
-      </main>
-    );
-  }
-
   return (
     <main className="min-h-screen bg-[#fffaf7] text-[#38231f]">
       <StoreHeader />
@@ -42,12 +32,23 @@ export default function CartPage() {
         <h1 className="mt-3 font-serif text-4xl sm:text-5xl">
           Your shopping bag.
         </h1>
+        {!ready && (
+          <p role="status" className="mt-3 text-sm text-[#806a62]">
+            Checking for saved items...
+          </p>
+        )}
 
         {cartItems.length === 0 ? (
           <div className="mt-10 rounded-3xl border border-[#f3e5df] bg-white px-6 py-16 text-center">
-            <h2 className="font-serif text-2xl">Your bag is waiting for a treat.</h2>
+            <h2 className="font-serif text-2xl">
+              {ready
+                ? "Your bag is waiting for a treat."
+                : "Your treats will appear here."}
+            </h2>
             <p className="mt-3 text-[#806a62]">
-              Explore our chocolates, cakes, and thoughtful gifts.
+              {ready
+                ? "Explore our chocolates, cakes, and thoughtful gifts."
+                : "We are restoring your saved cart. In the meantime, explore our collection."}
             </p>
             <Link
               href="/products"

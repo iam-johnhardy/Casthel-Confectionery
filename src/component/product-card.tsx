@@ -3,6 +3,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { useState } from "react";
 import { ShoppingBag } from "lucide-react";
 import type { Product } from "@/lib/products";
 import { formatPrice } from "@/lib/products";
@@ -14,6 +15,13 @@ export default function ProductCard({
   product: Product;
 }) {
   const { addItem } = useCart();
+  const [added, setAdded] = useState(false);
+
+  function handleAddToCart() {
+    addItem(product.id);
+    setAdded(true);
+    window.setTimeout(() => setAdded(false), 1500);
+  }
 
   return (
     <article className="group min-w-0">
@@ -50,11 +58,11 @@ export default function ProductCard({
         </p>
 
         <button
-          onClick={() => addItem(product.id)}
+          onClick={handleAddToCart}
           className="mt-3 flex w-full items-center justify-center gap-2 rounded-full border border-[#e9c9cf] px-3 py-2 text-sm font-semibold transition hover:bg-[#e96d91] hover:text-white"
         >
           <ShoppingBag size={16} />
-          Add to cart
+          {added ? "Added to cart" : "Add to cart"}
         </button>
       </div>
     </article>
